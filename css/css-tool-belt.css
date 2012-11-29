@@ -1,18 +1,3 @@
-/*********************** 
-Display
-************************/
-.dn {
-  display: none; }
-
-.db {
-  display: block; }
-
-.dib {
-  display: inline-block; }
-
-/*********************** 
-Positioning
-************************/
 .fl {
   float: left; }
 
@@ -53,9 +38,6 @@ Positioning
   position: fixed;
   bottom: 0; }
 
-/*********************** 
-Style
-************************/
 .round {
   -webkit-border-radius: 5px 5px 5px 5px;
   -moz-border-radius: 5px 5px 5px 5px;
@@ -71,9 +53,6 @@ Style
   -moz-border-radius: 5px 5px 0px 0px;
   border-radius: 5px 5px 0px 0px; }
 
-/*********************** 
-Padding 
-************************/
 .pad-small {
   padding: 10px; }
 
@@ -215,9 +194,6 @@ Padding
 .right-pad-100 {
   padding-right: 100px; }
 
-/*********************** 
-Margin
-************************/
 .marg-small {
   margin: 10px; }
 
@@ -359,9 +335,6 @@ Margin
 .right-marg-100 {
   margin-right: 100px; }
 
-/*********************** 
-Dimension
-************************/
 .half-height {
   height: 50%; }
 
@@ -374,9 +347,6 @@ Dimension
 .full-width {
   width: 100%; }
 
-/*********************** 
-Tables
-************************/
 table {
   max-width: 100%;
   background-color: transparent;

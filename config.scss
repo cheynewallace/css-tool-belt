@@ -1,2 +1,17 @@
-//The default size the .rounded classes will use
+//*********************** 
+// Included Sections
+//***********************
+$include-table: true;
+$include-display: false;
+$include-positioning: true;
+$include-style: true;
+$include-padding: true;
+$include-margin: true;
+$include-dimension: true;
+$include-tables: true;
+
+//*********************** 
+// Default Values
+//***********************
+// The default size the .rounded classes will use
 $rounded-radius: 5px;

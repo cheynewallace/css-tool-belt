@@ -1,243 +1,256 @@
-@import "config";
+@import "config.scss";
 @import "mixins.scss";
 
-/*********************** 
-Display
-************************/
-
-.dn {
-	display: none;
-}
-
-.db {
-	display: block;
-}
-
-.dib {
-	display: inline-block;
-}
-
-/*********************** 
-Positioning
-************************/
-
-.fl {
-	float: left;
-}
-
-.fr {
-	float: right;
-}
-
-.tac {
-	text-align: center;
-}
-
-.tal {
-	text-align: left;
-}
-
-.tar {
-	text-align: right;
-}
-
-.vam {
-	vertical-align: middle;
-}
-
-.vat {
-	vertical-align: top;
-}
-
-.vab {
-	vertical-align: bottom;
-}
-
-.abs-top {
-	position: absolute;
-	top: 0;
-}
-
-.abs-bottom {
-	position: absolute;
-	bottom: 0;
-}
-
-.sticky-top {
-	position: fixed;
-	top: 0;
-}
-
-.sticky-bottom {
-	position: fixed;
-	bottom: 0;
-}
-
-/*********************** 
-Style
-************************/
-
-.round {
-	@include rounded();
-}
-
-.round-bottom {
-	@include rounded(0px, 0px, $rounded-radius, $rounded-radius);
-}
-
-.round-top {
-	@include rounded($rounded-radius, $rounded-radius, 0px, 0px);
-}
-
-/*********************** 
-Padding 
-************************/
-
-.pad-small {
-	padding: 10px;
-}
-
-.pad-medium {
-	padding: 15px;
-}
-
-.pad-large{
-	padding: 20px;
-}
-
-.no-right-pad {
-	padding-right: 0;
-}
-
-.no-left-pad {
-	padding-left: 0;
-}
-
-.no-top-pad {
-	padding-top: 0;
-}
-
-.no-bottom-pad {
-	padding-bottom: 0;
-}
-
-@for $i from 1 through 10 {
-  .top-pad-#{$i*10} { padding-top: 10 * $i+px; }
-}
-
-@for $i from 1 through 10 {
-  .bottom-pad-#{$i*10} { padding-bottom: 10 * $i+px; }
-}
-
-@for $i from 1 through 10 {
-  .left-pad-#{$i*10} { padding-left: 10 * $i+px; }
-}
-
-@for $i from 1 through 10 {
-  .right-pad-#{$i*10} { padding-right: 10 * $i+px; }
-}
-
-/*********************** 
-Margin
-************************/
-
-.marg-small {
-	margin: 10px;
-}
-
-.marg-medium {
-	margin: 15px;
-}
-
-.marg-large{
-	margin: 20px;
-}
-
-.no-right-marg {
-	margin-right: 0;
-}
-
-.no-left-marg {
-	margin-left: 0;
-}
-
-.no-top-marg {
-	margin-top: 0;
-}
-
-.no-bottom-marg {
-	margin-bottom: 0;
-}
-
-
-@for $i from 1 through 10 {
-  .top-marg-#{$i*10} { margin-top: 10 * $i+px; }
-}
-
-@for $i from 1 through 10 {
-  .bottom-marg-#{$i*10} { margin-bottom: 10 * $i+px; }
-}
-
-@for $i from 1 through 10 {
-  .left-marg-#{$i*10} { margin-left: 10 * $i+px; }
-}
-
-@for $i from 1 through 10 {
-  .right-marg-#{$i*10} { margin-right: 10 * $i+px; }
-}
-
-/*********************** 
-Dimension
-************************/
-
-.half-height {
-	height: 50%;
-}
-
-.half-width {
-	width: 50%;
-}
-
-.full-height {
-	height: 100%;
-}
-
-.full-width {
-	width: 100%;
-}
-
-/*********************** 
-Tables
-************************/
-
-table {
-  max-width: 100%;
-  background-color: transparent;
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-.table {
-  width: 100%;
-  margin-bottom: 20px;
-  
-  th,td {
-  padding: 8px;
-  line-height: 20px;
-  text-align: left;
-  vertical-align: top;
-  border-top: 1px solid #dddddd;
+@if $include-display {
+//*********************** 
+// Display
+//***********************
+	.dn {
+		display: none;
 	}
 
-	th {
-  font-weight: bold;
+	.db {
+		display: block;
 	}
 
-	thead th {
-  vertical-align: bottom;
+	.dib {
+		display: inline-block;
+	}
+}
+
+@if $include-positioning {
+	//*********************** 
+	// Positioning
+	//***********************
+
+	.fl {
+		float: left;
 	}
 
-	tbody + tbody {
-  border-top: 2px solid #dddddd;
+	.fr {
+		float: right;
+	}
+
+	.tac {
+		text-align: center;
+	}
+
+	.tal {
+		text-align: left;
+	}
+
+	.tar {
+		text-align: right;
+	}
+
+	.vam {
+		vertical-align: middle;
+	}
+
+	.vat {
+		vertical-align: top;
+	}
+
+	.vab {
+		vertical-align: bottom;
+	}
+
+	.abs-top {
+		position: absolute;
+		top: 0;
+	}
+
+	.abs-bottom {
+		position: absolute;
+		bottom: 0;
+	}
+
+	.sticky-top {
+		position: fixed;
+		top: 0;
+	}
+
+	.sticky-bottom {
+		position: fixed;
+		bottom: 0;
+	}
+}
+
+@if $include-style {
+	//*********************** 
+	// Style
+	//***********************
+
+	.round {
+		@include rounded();
+	}
+
+	.round-bottom {
+		@include rounded(0px, 0px, $rounded-radius, $rounded-radius);
+	}
+
+	.round-top {
+		@include rounded($rounded-radius, $rounded-radius, 0px, 0px);
+	}
+}
+
+@if $include-padding {
+	//*********************** 
+	// Padding 
+	//***********************
+
+	.pad-small {
+		padding: 10px;
+	}
+
+	.pad-medium {
+		padding: 15px;
+	}
+
+	.pad-large{
+		padding: 20px;
+	}
+
+	.no-right-pad {
+		padding-right: 0;
+	}
+
+	.no-left-pad {
+		padding-left: 0;
+	}
+
+	.no-top-pad {
+		padding-top: 0;
+	}
+
+	.no-bottom-pad {
+		padding-bottom: 0;
+	}
+
+	@for $i from 1 through 10 {
+	  .top-pad-#{$i*10} { padding-top: 10 * $i+px; }
+	}
+
+	@for $i from 1 through 10 {
+	  .bottom-pad-#{$i*10} { padding-bottom: 10 * $i+px; }
+	}
+
+	@for $i from 1 through 10 {
+	  .left-pad-#{$i*10} { padding-left: 10 * $i+px; }
+	}
+
+	@for $i from 1 through 10 {
+	  .right-pad-#{$i*10} { padding-right: 10 * $i+px; }
+	}
+}
+
+@if $include-margin {
+	//*********************** 
+	// Margin
+	//***********************
+
+	.marg-small {
+		margin: 10px;
+	}
+
+	.marg-medium {
+		margin: 15px;
+	}
+
+	.marg-large{
+		margin: 20px;
+	}
+
+	.no-right-marg {
+		margin-right: 0;
+	}
+
+	.no-left-marg {
+		margin-left: 0;
+	}
+
+	.no-top-marg {
+		margin-top: 0;
+	}
+
+	.no-bottom-marg {
+		margin-bottom: 0;
+	}
+
+	@for $i from 1 through 10 {
+	  .top-marg-#{$i*10} { margin-top: 10 * $i+px; }
+	}
+
+	@for $i from 1 through 10 {
+	  .bottom-marg-#{$i*10} { margin-bottom: 10 * $i+px; }
+	}
+
+	@for $i from 1 through 10 {
+	  .left-marg-#{$i*10} { margin-left: 10 * $i+px; }
+	}
+
+	@for $i from 1 through 10 {
+	  .right-marg-#{$i*10} { margin-right: 10 * $i+px; }
+	}
+
+}
+
+@if $include-dimension {
+	//*********************** 
+	// Dimension
+	//***********************
+
+	.half-height {
+		height: 50%;
+	}
+
+	.half-width {
+		width: 50%;
+	}
+
+	.full-height {
+		height: 100%;
+	}
+
+	.full-width {
+		width: 100%;
+	}
+}
+
+@if $include-tables {
+	//*********************** 
+	// Tables
+	//***********************
+
+	table {
+	  max-width: 100%;
+	  background-color: transparent;
+	  border-collapse: collapse;
+	  border-spacing: 0;
+	}
+
+	.table {
+	  width: 100%;
+	  margin-bottom: 20px;
+	  
+	  th,td {
+	  padding: 8px;
+	  line-height: 20px;
+	  text-align: left;
+	  vertical-align: top;
+	  border-top: 1px solid #dddddd;
+		}
+
+		th {
+	  font-weight: bold;
+		}
+
+		thead th {
+	  vertical-align: bottom;
+		}
+
+		tbody + tbody {
+	  border-top: 2px solid #dddddd;
+		}
 	}
 }
