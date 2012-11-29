@@ -1,3 +1,6 @@
+@import "config";
+@import "mixins.scss";
+
 /*********************** 
 Display
 ************************/
@@ -74,22 +77,16 @@ Positioning
 Style
 ************************/
 
-@mixin rounded($tl: 5px, $tr: 5px, $br: 5px, $bl: 5px){
-  -webkit-border-radius: $tl $tr $br $bl;
-  -moz-border-radius: $tl $tr $br $bl;
-  border-radius: $tl $tr $br $bl;
-}
-
 .round {
 	@include rounded();
 }
 
 .round-bottom {
-	@include rounded(0px, 0px, 5px, 5px);
+	@include rounded(0px, 0px, $rounded-radius, $rounded-radius);
 }
 
 .round-top {
-	@include rounded(5px, 5px, 0px, 0px);
+	@include rounded($rounded-radius, $rounded-radius, 0px, 0px);
 }
 
 /*********************** 
@@ -207,4 +204,40 @@ Dimension
 
 .full-width {
 	width: 100%;
+}
+
+/*********************** 
+Tables
+************************/
+
+table {
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+  
+  th,td {
+  padding: 8px;
+  line-height: 20px;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+	}
+
+	th {
+  font-weight: bold;
+	}
+
+	thead th {
+  vertical-align: bottom;
+	}
+
+	tbody + tbody {
+  border-top: 2px solid #dddddd;
+	}
 }
